@@ -94,10 +94,10 @@ def generate_predictions(test_image_path, actual_label):
     test_img_input = test_img_arr.reshape((1, test_img_arr.shape[0], test_img_arr.shape[1], test_img_arr.shape[2]))
 
     predicted_label = np.argmax(model.predict(test_img_input))
-    predicted_vegetable = class_map[predicted_label]
+    predicted_image = class_map[predicted_label]
     plt.figure(figsize=(4, 4))
     plt.imshow(test_img_arr)
-    plt.title("Predicted Label: {}, Actual Label: {}".format(predicted_vegetable, actual_label))
+    plt.title("Predicted Label: {}, Actual Label: {}".format(predicted_image, actual_label))
     plt.grid()
     plt.axis('off')
     plt.show()
